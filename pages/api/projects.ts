@@ -11,12 +11,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   try {
     const response = await fetch('https://api.github.com/users/Xuebawugui/repos');
     const repos = await response.json();
-    const projects = repos.map((repo: any) => ({
-      title: repo.name,
-      demo: `https://Xuebawugui.github.io/${repo.name}`,
-      github: repo.html_url,
-      cover: `https://image.thum.io/get/width/1200/crop/800/https://Xuebawugui.github.io/${repo.name}`
-    }));
+    const projects = repos
+      .filter((repo: any) => repo.has_pages)
+      .map((repo: any) => ({
+        title: repo.name,
+        demo: `https://Xuebawugui.github.io/${repo.name}`,
+        github: repo.html_url,
+        cover: `https://image.thum.io/get/width/400/crop/300/https://Xuebawugui.github.io/${repo.name}`
+      }));
     res.status(200).json(projects);
   } catch (error) {
     console.error('Error fetching GitHub repos:', error);

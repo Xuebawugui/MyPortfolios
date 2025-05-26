@@ -75,4 +75,8 @@ This project is configured for easy deployment on Vercel:
 
 ## License
 
+<<<<<<< HEAD
 MIT License 
+=======
+MIT License 
+>>>>>>> 7c7ac65 (Beautify project cards and only show repos with GitHub Pages)
