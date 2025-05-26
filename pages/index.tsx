@@ -63,6 +63,17 @@ export default function Home() {
           )}
         </div>
       </section>
+      <section id="certificates">
+        <h2>My Certificates</h2>
+        <div className="certificates-list">
+          <a className="certificate-link" href="https://www.freecodecamp.org/certification/xuebawugui/foundational-c-sharp-with-microsoft" target="_blank" rel="noopener noreferrer">
+            Foundational C# with Microsoft
+          </a>
+          <a className="certificate-link" href="https://www.freecodecamp.org/certification/xuebawugui/responsive-web-design" target="_blank" rel="noopener noreferrer">
+            Responsive Web Design
+          </a>
+        </div>
+      </section>
       <section id="contact">
         <h2>Contact Me</h2>
         <div className="contact-links">
