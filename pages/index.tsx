@@ -32,9 +32,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Tech Style Personal Portfolio</title>
+        <title>xuebawugui Portfolios</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="https://fonts.googleapis.com/css?family=Orbitron:700,400&display=swap" rel="stylesheet" />
+        <link rel="icon" href="https://em-content.zobj.net/source/microsoft-teams/337/open-book_1f4d6.png" />
       </Head>
       <nav id="navbar">
         <ul>
