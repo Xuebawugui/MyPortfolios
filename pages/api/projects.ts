@@ -20,12 +20,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       return res.status(500).json([]);
     }
     const projects = repos
-      .filter((repo: any) => repo.has_pages)
+      .filter((repo: any) => repo.homepage || repo.has_pages)
       .map((repo: any) => ({
         title: repo.name,
-        demo: `https://Xuebawugui.github.io/${repo.name}`,
+        demo: repo.homepage || `https://Xuebawugui.github.io/${repo.name}`,
         github: repo.html_url,
-        cover: `https://image.thum.io/get/width/400/crop/300/https://Xuebawugui.github.io/${repo.name}`
+        cover: `https://image.thum.io/get/width/400/crop/300/${repo.homepage || `https://Xuebawugui.github.io/${repo.name}`}`
       }));
     res.status(200).json(projects);
   } catch (error) {
