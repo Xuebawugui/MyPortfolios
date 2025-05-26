@@ -79,7 +79,7 @@ export default function Home() {
         <div className="contact-links">
           <a id="profile-link" href="https://github.com/Xuebawugui" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://mail.google.com/mail/?view=cm&to=xuebawugui@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
-          <a href="https://www.linkedin.com/in/忠归-彭-07a91b367" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/xuebawugui" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </section>
     </>
