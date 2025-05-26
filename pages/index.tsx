@@ -14,7 +14,7 @@ export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const fetchProjects = async () => {
       try {
         const response = await fetch('/api/projects');
@@ -26,15 +26,14 @@ export default function Home() {
         setLoading(false);
       }
     };
-
     fetchProjects();
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
-        <title>My Portfolio</title>
-        <meta name="description" content="个人作品集展示网站" />
+        <title>Tech Style Personal Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="https://fonts.googleapis.com/css?family=Orbitron:700,400&display=swap" rel="stylesheet" />
       </Head>
       <nav id="navbar">
@@ -46,19 +45,22 @@ export default function Home() {
       </nav>
       <section id="welcome-section">
         <h1>Hey, I am Xuebawugui</h1>
-        <p className="subtitle">A web developer</p>
+        <p className="subtitle">A full-stack web developer</p>
       </section>
       <section id="projects">
         <h2>My Projects</h2>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <div className="projects-grid">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
-          </div>
-        )}
+        <div className="projects-grid">
+          {loading ? (
+            <p className="text-center">Loading...</p>
+          ) : (
+            projects.map((project, index) => (
+              <a className="project-tile" key={index} href={project.github} target="_blank" rel="noopener noreferrer">
+                <img src={project.cover} alt={project.title} />
+                <span>{project.title}</span>
+              </a>
+            ))
+          )}
+        </div>
       </section>
       <section id="contact">
         <h2>Contact Me</h2>
@@ -68,6 +70,6 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/忠归-彭-07a91b367" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </section>
-    </div>
+    </>
   );
 } 
